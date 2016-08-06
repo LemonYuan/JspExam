@@ -1,0 +1,10 @@
+servlet\DeleteFilm.class
+dao\LoginDAO.class
+util\ConnectionFactory.class
+entity\Film.class
+entity\Customer.class
+service\LoginService.class
+servlet\GetAllFilmsServlet.class
+dao\FilmDAO.class
+service\FilmService.class
+servlet\LoginServlet.class
