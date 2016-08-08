@@ -8,7 +8,7 @@ public class Film {
     private String title;
     private String description;
     private Date release_year;
-    private byte language_id;
+    private int language_id;
     private byte original_language_id;
     private byte rental_duration;
     private BigDecimal rental_rate;
@@ -46,10 +46,10 @@ public class Film {
 	public void setRelease_year(Date release_year) {
 		this.release_year = release_year;
 	}
-	public byte getLanguage_id() {
+	public int getLanguage_id() {
 		return language_id;
 	}
-	public void setLanguage_id(byte language_id) {
+	public void setLanguage_id(int language_id) {
 		this.language_id = language_id;
 	}
 	public byte getOriginal_language_id() {

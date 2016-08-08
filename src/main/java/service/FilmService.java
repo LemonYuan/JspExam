@@ -32,4 +32,15 @@ public class FilmService {
 		}
     	  return b;
        }
+      public boolean insertFilm(Film f){
+    	  boolean b=false;
+    	  try {
+    		  return filmDAO.insert(conn, f);
+    	  } catch (SQLException e) {
+    		  e.printStackTrace();
+    	  } catch (Exception e) {
+			e.printStackTrace();
+		}
+    	  return b;
+      }
 }

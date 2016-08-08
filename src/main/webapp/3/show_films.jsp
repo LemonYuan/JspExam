@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+        <a href="<%=request.getContextPath() %>/getAllLanguage">新增电影</a>
         <form action="<%=request.getContextPath() %>/GetAllFilmsServlet" method="post">
                 <input type="submit" value="显示所有电影"></input>
         </form>

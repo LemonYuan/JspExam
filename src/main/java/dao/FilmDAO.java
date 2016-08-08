@@ -27,17 +27,13 @@ public class FilmDAO {
          }
     }
    public boolean insert(Connection conn ,Film film)throws Exception{
-	   PreparedStatement st=conn.prepareCall("insert into film(title,description,language_id,rental_duration,rental_rate,replacement_cost,last_update)"
-	   		+ "values(?,?,?,?,?,?,?)");
+	   PreparedStatement st=conn.prepareCall("insert into film(title,description,language_id)"
+	   		+ "values(?,?,?)");
        st.setString(1, film.getTitle());
        st.setString(2, film.getDescription());
-       st.setInt(3, film.getLanguage_id());
-       st.setByte(4, (byte) 6);
-       st.setInt(5,1);
-       st.setDouble(6,20.99);
-       st.setDate(7,new Date(0));
-       ResultSet rs=st.executeQuery();
-       return rs.next();
+       st.setInt(3, film.getLanguage_id());     
+       boolean rs=st.execute();
+       return rs;
    }
 	public boolean delete(Connection conn, Film f) throws SQLException{
 		PreparedStatement st=(PreparedStatement) conn.prepareCall("delete from film where id=?");
