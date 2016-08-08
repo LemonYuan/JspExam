@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.sql.Date;
 
 public class Film {
-    private short film_id;
+    private int film_id;
     private String title;
     private String description;
     private Date release_year;
@@ -22,10 +22,10 @@ public class Film {
 	public void setLanguage(String language) {
 		this.language = language;
 	}
-	public short getFilm_id() {
+	public int getFilm_id() {
 		return film_id;
 	}
-	public void setFilm_id(short film_id) {
+	public void setFilm_id(int film_id) {
 		this.film_id = film_id;
 	}
 	public String getTitle() {

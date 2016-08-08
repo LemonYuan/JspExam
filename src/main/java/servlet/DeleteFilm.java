@@ -36,14 +36,12 @@ public class DeleteFilm extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Film film =new Film();
-		Short i=(short) Integer.parseInt(request.getParameter("id"));
+		int i= Integer.parseInt(request.getParameter("film_id"));
 		film.setFilm_id(i);
-		if(filmService.deleteFilm(film))
-		{
+		try {
+			filmService.deleteFilm(film);
 			response.sendRedirect("3/success.jsp");
-		}
-		else
-		{
+		} catch (Exception e) {
 			response.sendRedirect("3/error.jsp");
 		}
 	}

@@ -14,12 +14,15 @@
         </form>
         <%
         ArrayList list=(ArrayList)request.getAttribute("films");
+        String path=request.getContextPath();
         if(list!=null)
         {
+        	
           for(int i=0;i<list.size();i++) {  
         	  Film film=(Film)list.get(i);
-        	  out.print("id："+film.getFilm_id()+"名称: "+film.getTitle()+"简介："+film.getDescription()+"语言："+film.getLanguage()+"</br></br>");
-          }
+        	  out.print("id："+film.getFilm_id()+"名称: "+film.getTitle()+"简介："+film.getDescription()+"语言："+film.getLanguage());
+        	  out.print("<a href=\""+path+"/DeleteFilm?film_id="+film.getFilm_id()+"\""+">delete</a></br></br>");
+           }
         }
         %>
         	  
